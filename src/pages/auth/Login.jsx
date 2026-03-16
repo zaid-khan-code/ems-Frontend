@@ -116,8 +116,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#0d9488] hover:bg-teal-700 disabled:bg-teal-400 text-white font-medium py-2.5 rounded-lg transition-colors"
-          >
+            className="w-full bg-[#0d9488] hover:bg-teal-700 disabled:bg-teal-400 text-white font-medium py-2.5 rounded-lg transition-colors">
             {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>

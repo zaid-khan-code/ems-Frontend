@@ -17,7 +17,6 @@ import Payroll from "./pages/payroll/Payroll.jsx";
 import HRAccounts from "./pages/accounts/HRAccounts.jsx";
 
 // settings pages
-import Settings from "./pages/settings/Settings.jsx";
 import Departments from "./pages/settings/Departments.jsx";
 import Designations from "./pages/settings/Designations.jsx";
 import WorkModes from "./pages/settings/WorkModes.jsx";
