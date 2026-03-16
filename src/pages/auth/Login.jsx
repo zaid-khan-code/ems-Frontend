@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#1e293b] flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
         {/* HEADER */}
         <div className="text-center mb-8">
@@ -116,7 +116,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 text-white font-medium py-2.5 rounded-lg transition-colors"
+            className="w-full bg-[#0d9488] hover:bg-teal-700 disabled:bg-teal-400 text-white font-medium py-2.5 rounded-lg transition-colors"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

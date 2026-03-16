@@ -25,12 +25,12 @@ const Sidebar = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   // active link style — applied by NavLink automatically
-  const activeStyle = "bg-teal-600 text-white";
+  const activeStyle = "bg-[#0d9488] text-white";
   const baseStyle =
     "flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-300 hover:bg-slate-700 transition-colors";
 
   return (
-    <div className="w-64 h-screen bg-slate-800 flex flex-col overflow-y-auto">
+    <div className="w-64 h-screen bg-[#1e293b] flex flex-col overflow-y-auto">
       {/* LOGO */}
       <div className="px-6 py-5 border-b border-slate-700">
         <h1 className="text-white text-xl font-bold">HR Pro</h1>
