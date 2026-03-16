@@ -20,8 +20,10 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (username, password) => {
+    console.log("🟣 AUTH CONTEXT LOGIN CALLED with:", { username });
     // hit backend → get token + user
     const data = await authService.login(username, password);
+    console.log("🟣 AUTH CONTEXT DATA RECEIVED:", data);
 
     // save to localStorage so refresh doesn't log out
     authService.saveSession(data.token, data.user);

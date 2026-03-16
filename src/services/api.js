@@ -10,10 +10,16 @@ const api = axios.create({
 // reads token from localStorage and adds it to header
 api.interceptors.request.use(
     (config) => {
+        console.log('🔵 REQUEST INTERCEPTOR TRIGGERED');
+        console.log('🔵 Request URL:', config.baseURL + config.url);
+        console.log('🔵 Request method:', config.method);
+        console.log('🔵 Full config:', JSON.parse(JSON.stringify(config)));
         const token = localStorage.getItem('token');
+        console.log('🔵 Token from localStorage:', token ? token.substring(0, 30) + '...' : 'NULL/EMPTY');
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
+        console.log('🔵 Final headers:', JSON.parse(JSON.stringify(config.headers)));
         return config;
     },
     (error) => Promise.reject(error)
@@ -22,9 +28,20 @@ api.interceptors.request.use(
 // AUTO-LOGOUT: runs after every response
 // if backend returns 401 (expired/invalid token) → clear storage and redirect to login
 api.interceptors.response.use(
-    (response) => response,
+    (response) => {
+        console.log('🟢 RESPONSE SUCCESS');
+        console.log('🟢 Status:', response.status);
+        console.log('🟢 Data:', response.data);
+        return response;
+    },
     (error) => {
+        console.log('🔴 RESPONSE ERROR TRIGGERED');
+        console.log('🔴 error.response:', error.response);
+        console.log('🔴 error.response?.status:', error.response?.status);
+        console.log('🔴 error.config.url:', error.config?.url);
+        console.log('🔴 Full error:', error);
         if (error.response?.status === 401) {
+            console.log('🔴 401 DETECTED — clearing localStorage and redirecting to /login');
             localStorage.clear();
             window.location.href = '/login';
         }

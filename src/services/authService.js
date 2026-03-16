@@ -4,7 +4,9 @@ const authService = {
     // sends username + password to backend
     // backend verifies and returns token + user info
     login: async (username, password) => {
+        console.log('🟡 AUTH SERVICE LOGIN CALLED with:', { username, password: '***' });
         const response = await api.post('/auth/login', { username, password });
+        console.log('🟡 AUTH SERVICE RESPONSE:', response);
         return response.data;
     },
 
